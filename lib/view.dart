@@ -3,71 +3,215 @@ import 'package:provider/provider.dart';
 import 'package:purple_room/logicModel.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery. of(context). size. width ;
+
     return ChangeNotifierProvider(
         create: (_) => LogicModel(),
         child: Consumer<LogicModel>(
           builder: (context, model, child) => SafeArea(
             child: Scaffold(
-              backgroundColor: Color(0xffFAF2A1),
+              backgroundColor: const Color(0xffFAF2A1),
               body: Padding(
                 padding: const EdgeInsets.only(top: 40, left: 30, right: 20),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            model.userGreeting,
-                            style:
-                                TextStyle(fontSize: 30, fontFamily: 'Pacifico'),
-                          ),
-                          const SizedBox(
-                            width: 160,
-                          ),
-                          Container(
-                            height: 50,
-                            width: 70,
-                            decoration: const BoxDecoration(
+                      Container(
+                        width: width,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.brown,
+                        ),
+                        child: Row(
+                          children: [
+                            const Text(
+                              'Welcome',
+                              style: TextStyle(
+                                  fontSize: 30,
+                                  fontFamily: 'Pacifico',
+                                  color: Colors.white),
+                            ),
+                            const SizedBox(
+                              width: 150,
+                            ),
+                            Container(
+                              height: 60,
+                              width: 80,
+                              decoration: const BoxDecoration(
                                 color: Colors.blueGrey,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
-
-                            //child: Image.asset('name'),
-                          )
-                        ],
+                                shape: BoxShape.circle,
+                              ),
+                              //child: Image.asset('name'),
+                            )
+                          ],
+                        ),
                       ),
                       const SizedBox(
-                        height: 120,
+                        height: 80,
                       ),
                       const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Bottles of the day',
+                          'Top selling',
                           style:
                               TextStyle(fontSize: 25, fontFamily: 'Pacifico'),
                         ),
                       ),
                       const SizedBox(
-                        height: 40,
+                        height: 50,
                       ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: SizedBox(
-                          height: 100,
-                          width: 350,
-                          child: Card(
-                            color: Colors.grey,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            child: Row(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                height: 360,
+                                width: 160,
+                                clipBehavior: Clip.hardEdge,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.blueGrey,
+                                ),
+                                child: Image.asset('assets/images/bleu.jpg',fit: BoxFit.fill,),
+                              ),
+                              const SizedBox(height: 10,),
+                              Container(
+                                height: 100,
+                                width: 150,
+                                color: Colors.deepOrange,
+                                child: Column(
+                                  children: [
+                                    Text('Bleu de Chanel', style: TextStyle(fontFamily: 'Bebas Neue', fontSize: 20),),
+                                    Text('\$5', style: TextStyle(fontFamily: 'Bebas Neue', fontSize: 20),)
+                                  ],
+                                ),
+                              )
+
+                            ],
                           ),
-                        ),
-                      )
+                          Column(
+                            children: [
+                              Container(
+                                height: 360,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.red,
+                                ),
+                                //child: Image.asset('name'),
+                              ),
+                              const SizedBox(height: 20,),
+                              Container(
+                                height: 100,
+                                width: 150,
+                                color: Colors.deepOrange,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                height: 360,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.blueGrey,
+                                ),
+                                //child: Image.asset('name'),
+                              ),
+                              const SizedBox(height: 20,),
+                              Container(
+                                height: 100,
+                                width: 150,
+                                color: Colors.deepOrange,
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                height: 360,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.blueGrey,
+                                ),
+                                //child: Image.asset('name'),
+                              ),
+                              const SizedBox(height: 20,),
+                              Container(
+                                height: 100,
+                                width: 150,
+                                color: Colors.deepOrange,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                height: 360,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.blueGrey,
+                                ),
+                                //child: Image.asset('name'),
+                              ),
+                              const SizedBox(height: 20,),
+                              Container(
+                                height: 100,
+                                width: 150,
+                                color: Colors.deepOrange,
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                height: 360,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.blueGrey,
+                                ),
+                                //child: Image.asset('name'),
+                              ),
+                              const SizedBox(height: 20,),
+                              Container(
+                                height: 100,
+                                width: 150,
+                                color: Colors.deepOrange,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20,)
                     ],
                   ),
                 ),
